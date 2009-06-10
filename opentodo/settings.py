@@ -95,6 +95,13 @@ INSTALLED_APPS = (
     'todo',
 )
 
+# add handy tools from python-django-extensions if available
+try:
+    import django_extensions
+    INSTALLED_APPS = INSTALLED_APPS + ('django_extensions',)
+except ImportError:
+    pass
+
 ##################################################################################
 # You can create local_settings.py to override the settings.
 # It is recomended to put all your custom settings (database, path, etc.) there
