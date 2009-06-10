@@ -390,8 +390,8 @@ def delete_task_attach(request, attach_id):
 @login_required
 @render_to('todo/project_edit.html')
 def add_project(request):
-    if not request.user.is_superuser:
-        return HttpResponseForbidden()
+#    if not request.user.is_superuser:
+#        return HttpResponseForbidden()
 
     if request.method == 'POST':
         f = ProjectForm(request.POST)
@@ -413,8 +413,8 @@ def add_project(request):
 def edit_project(request, project_id):
     project = get_object_or_404(Project, pk=project_id)
 
-    if not request.user.is_superuser:
-        return HttpResponseForbidden()
+#    if not request.user.is_superuser:
+#        return HttpResponseForbidden()
 
     if request.method == 'POST':
         f = ProjectForm(request.POST, instance = project)

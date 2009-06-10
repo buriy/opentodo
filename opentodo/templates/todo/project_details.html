@@ -18,9 +18,8 @@
 <b>Дата создания</b><br />
 <span>{{project.created_at|format_date:"short"}}</span>
 </div>
-{% if user.is_superuser %}
-	{% include "todo/project_actions.html" %}
-{% endif %}
+
+{% include "todo/project_actions.html" %}
 
 {% endblock %}
 
