@@ -8,6 +8,8 @@ urlpatterns = patterns('',
     (r'^$', 'todo.views.index'),
     (r'^logout/$', 'django.contrib.auth.views.logout_then_login'),
     (r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    (r'^accounts/password/$', 'django.contrib.auth.views.password_change'),
+    (r'^password/done/$', 'django.contrib.auth.views.password_change_done'),
     (r'^admin/(.*)', admin.site.root),
 )
 

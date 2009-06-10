@@ -28,6 +28,8 @@
 <div id="top-menu"><a href="{% url tasks_list %}"{% ifequal menu_active 'tasks'%}style="color:black"{% endifequal %}>Задачи</a>&nbsp;|&nbsp;<a href="{% url projects_list %}"{% ifequal menu_active 'projects'%}style="color:black"{% endifequal %}>Проекты</a>
 {% if user.is_superuser %}
 |&nbsp;<a href="/admin/" style="color:#aa0033" target="_blank">Администрирование</a>
+{% else %}
+|&nbsp;<a href="/accounts/password/" style="color:#aa0033" target="_blank">Сменить пароль</a>
 {% endif %}
 {% ifequal HOST 'demo.opentodo.ru' %}
 |&nbsp;<a href="http://code.google.com/p/opentodo/" target="_blank" style="color:#aa0033">Страница проекта на Google Code</a>
