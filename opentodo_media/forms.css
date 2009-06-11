@@ -51,12 +51,12 @@ table#editform_table th {
 }
 
 #editform textarea {
-	width: 600px;
-	height: 200px;
+	/*width: 600px;
+	height: 200px;*/
 }
 #editform #id_title {
-	width: 600px;
-	height: 35px;
+	/*width: 600px;
+	height: 35px;*/
 }
 
 input.button {

@@ -113,7 +113,7 @@ th {
 }
 
 /***********************************/
-/* Список задач                    */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ                    */
 #task-list-top {
 	width:100%;
 }
@@ -242,7 +242,7 @@ tr.grey td a.todolist, tr.grey td a.todolist:visited, tr.grey td {
 }
 
 /***********************************/
-/* Страница с детальным описанием  */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  */
 h2#task-title {
 	margin:0;
 	padding-bottom: 0px;
@@ -257,7 +257,7 @@ h2#task-title {
 }
 
 #task-container {
-	width: 50em;
+	/*width: 50em;*/
 	padding-bottom:10px;
 }
 
@@ -276,7 +276,7 @@ div.top-indent {
 }
 div.comment {
 	margin-bottom:20px;
-	width: 50em;
+	/*width: 50em;*/
 	color: #000;
 	background-color: #fff;
 }

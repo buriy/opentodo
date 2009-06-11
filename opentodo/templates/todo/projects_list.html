@@ -1,4 +1,7 @@
 {% extends "todo.html" %}
+{% block extra_media %}
+{% include "extra_css.html" %}
+{% endblock %}
 
 {% block title %}Проекты{% endblock %}
 
@@ -7,8 +10,12 @@
 
 {% block content %}
 
+<div style="margin-bottom:20px;">
 <h1 style="display: inline; padding-right: 15px">Проекты</h1>
-<a href="{% url add_project %}" class="do">добавить проект</a><br /><br />
+<div style="float:right; text-align:right; margin-bottom:20px;">
+	<a class="button" href="{% url add_project %}" style="color:#333"><span>Добавить проект</span></a>
+</div>
+</div>
 
 {% if projects %}
 {% for p in projects %}
