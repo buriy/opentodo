@@ -39,7 +39,7 @@ def uniqs(seq):
 # Отправка почты - обертка для EmailMessage
 def send_emails(subject, message, recipient_list):
     msg = EmailMessage(subject, message, settings.EMAIL_ADDRESS_FROM, recipient_list)
-    msg.content_subtype = "html"
+    msg.content_subtype = "plain"
     msg.send(fail_silently=settings.EMAIL_FAIL_SILENTLY)
 
 # Генерирует upload path для FileField

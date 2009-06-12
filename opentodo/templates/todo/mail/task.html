@@ -1,10 +1,13 @@
-{% load todo_extras %}<b>{{t.title}}</b><br /><br />
-{% if t.info %}{{t.info|sanitize}}{% endif %}<br /><br />
+{% load todo_extras %}
+{{t.title}}
+{% if t.info %}{{t.info}}{% endif %}
 
-Проект: {{t.project.title }}<br />
-Автор: {{ t.author|username }}<br />
-Дата: {{t.created_at|date:"d.m.Y"}}<br />
-Ответственный: {{ t.assigned_to|username|default:"не назначен" }}<br />
-{% if t.deadline %}Срок: {{ t.deadline|date:"d.m.Y" }}<br />{% else %}<br />{% endif %}
+Проект: {{t.project.title }}
+Автор: {{ t.author|username }}
+Дата: {{t.created_at|date:"d.m.Y"}}
+Ответственный: {{ t.assigned_to|username|default:"не назначен" }}
+{% if t.deadline %}Срок: {{ t.deadline|date:"d.m.Y" }}
+{% else %}
+{% endif %}
 
-<a href="http://{{host}}{% url task_details t.id %}">http://{{host}}{% url task_details t.id %}</a>
+http://{{host}}{% url task_details t.id %}
