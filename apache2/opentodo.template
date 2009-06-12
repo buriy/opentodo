@@ -1,0 +1,9 @@
+<VirtualHost *:80>
+	ServerName opentodo
+
+	Alias /admin-media/ /usr/share/pyshared/django/contrib/admin/media/
+	Alias /static/	/path-to-opentodo/static/
+
+	WSGIScriptAlias / /path-to-opentodo/django.wsgi
+
+</VirtualHost>
