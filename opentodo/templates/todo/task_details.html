@@ -56,7 +56,11 @@
 {% block content %}
 <div id="task-container">
 
-<h2 id="task-title">{{task.title}}</h2>
+<h2 id="task-title" style="display: inline; padding-right: 15px">{{task.title}}</h2>
+<div style="float:right; text-align:right; margin-bottom:20px;">
+<a class="button" href="{% url edit_task task.id %}" style="color:#333"><span><img src="{{MEDIA_URL}}img/icon_changelink.gif" style="vertical-align:middle; border:0; margin-right:4px;" />Редактировать</span></a>
+<a class="button" href="javascript:if(confirm('Удалить задачу?')) location.href='{% url delete_task task.id %}'" style="color:#333"><span><img src="{{MEDIA_URL}}img/icon_deletelink.gif" style="vertical-align:middle; border:0; margin-right:4px;" />Удалить</span></a>
+</div>
 {% if task.info %}<div id="task-info">{{task.info|sanitize}}</div>{% endif %}
 </div>
 
