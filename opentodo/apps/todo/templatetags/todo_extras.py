@@ -95,6 +95,10 @@ def username(user):
     try:
         if user.first_name and user.last_name:
             return "%s %s" % (user.first_name, user.last_name)
+        elif user.first_name:
+            return "%s" % user.first_name
+        elif user.last_name:
+            return "%s" % user.last_name
         else:
             return "%s" % user.username
     except:
