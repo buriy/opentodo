@@ -1,3 +1,7 @@
 local_settings.py
 Thumbs.db
 *.pyc
+*.db
+opentodo/superadmin/
+opentodo/beautils/
+opentodo/django/

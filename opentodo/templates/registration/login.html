@@ -52,7 +52,7 @@ function setFocus() {
 <div id="content">
 <table cellspacing=0 width=400 align=center><tr><td style="border: 5px solid #ddd; padding-left: 31; padding-bottom: 30; padding-top: 22;background-color: #fff"> 
 	{% if not user.is_authenticated %}
-		{% if form.has_errors %}
+		{% if not form.is_valid %}
 		<div class="error">Неправильный логин или пароль</div>
 		{% endif %}
 		<form method="post" action="." id="id_loginform">
@@ -66,6 +66,7 @@ function setFocus() {
 			<td style="padding-top:10px;">Логин / пароль: <i><b><span style="color:green">demo / demo</span></b></i></td></tr>
 		{% endifequal %}
 		</table>
+        {% csrf_token %}
 		<input type="hidden" name="next" value="{{ next }}" />
 		</form>
 	{% else %}

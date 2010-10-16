@@ -1,0 +1,3 @@
+opentodo/beautils/ = LIB/django-beautils/beautils
+opentodo/django/ = LIB/django-trunk/django
+opentodo/superadmin/ = LIB/django-superadmin/superadmin

@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+import sys,os
+from os.path import join
 
+ROOT = os.path.abspath(os.path.dirname(__file__))
 # ! It is a good idea not to edit this and edit local_settings.py instead
 # ! (copy local_settings.py.default to local_settings.py first)
 # ! Especially if you want to update from version control system in future, because
@@ -8,8 +11,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-DATABASE_ENGINE = 'mysql'        # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_NAME = 'opentodo'       # Or path to database file if using sqlite3.
+DATABASE_ENGINE = 'sqlite3'        # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
+DATABASE_NAME = join(ROOT,'base.db')       # Or path to database file if using sqlite3.
 DATABASE_USER = ''               # Not used with sqlite3.
 DATABASE_PASSWORD = ''           # Not used with sqlite3.
 DATABASE_HOST = ''               # Set to empty string for localhost. Not used with sqlite3.
@@ -17,12 +20,12 @@ DATABASE_PORT = ''               # Set to empty string for default. Not used wit
 
 # Absolute path to the directory that holds media.
 # MEDIA_ROOT = '/var/www/opentodo_media'
-MEDIA_ROOT = ''
+MEDIA_ROOT = 'media/'
 
 # URL that handles the media served from MEDIA_ROOT.
 # Note that this should have a trailing slash if it has a path component
 # MEDIA_URL = 'http://static.myhost.ru' or MEDIA_URL = 'http://myhost.ru/static/'
-MEDIA_URL = ''
+MEDIA_URL = 'http://localhost/media/opentodo/'
 
 SEND_EMAILS = False       # make it True and edit settings bellow if you want to receive emails
 EMAIL_HOST = ''           # smtp.myhost.com
@@ -40,13 +43,11 @@ SECRET_KEY = 'ih^s_r3qgx!8-7aj%7^tqg#mj&zpdmchbbc=+*9=y#cm&v(ga)'
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL= '/'
 
-import sys, os
-PROJECT_DIR = os.path.dirname(__file__)
-sys.path.append(PROJECT_DIR)
-sys.path.append(PROJECT_DIR + '/apps')
+sys.path.append(ROOT)
+sys.path.append(ROOT + '/apps')
 
 TEMPLATE_DIRS = (
-    PROJECT_DIR + '/templates'
+    ROOT + '/templates'
 )
 
 TIME_ZONE = 'Europe/Moscow'
@@ -93,6 +94,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.admin',
     'todo',
+    'beautils',
+    'superadmin',
 )
 
 # add handy tools from python-django-extensions if available
