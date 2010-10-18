@@ -27,6 +27,8 @@ MEDIA_ROOT = 'media/'
 # MEDIA_URL = 'http://static.myhost.ru' or MEDIA_URL = 'http://myhost.ru/static/'
 MEDIA_URL = 'http://localhost/media/opentodo/'
 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 SEND_EMAILS = False       # make it True and edit settings bellow if you want to receive emails
 EMAIL_HOST = ''           # smtp.myhost.com
 EMAIL_HOST_USER = ''      # user123
