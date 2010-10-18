@@ -9,10 +9,11 @@ ROOT = os.path.abspath(os.path.dirname(__file__))
 # ! local_settings.py is not under version control
 
 DEBUG = True
+PRODUCTION = True
 TEMPLATE_DEBUG = DEBUG
 
 DATABASE_ENGINE = 'sqlite3'        # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_NAME = join(ROOT,'base.db')       # Or path to database file if using sqlite3.
+DATABASE_NAME = join(ROOT, 'base.db')       # Or path to database file if using sqlite3.
 DATABASE_USER = ''               # Not used with sqlite3.
 DATABASE_PASSWORD = ''           # Not used with sqlite3.
 DATABASE_HOST = ''               # Set to empty string for localhost. Not used with sqlite3.
@@ -20,12 +21,17 @@ DATABASE_PORT = ''               # Set to empty string for default. Not used wit
 
 # Absolute path to the directory that holds media.
 # MEDIA_ROOT = '/var/www/opentodo_media'
-MEDIA_ROOT = 'media/'
+MEDIA_ROOT = join(ROOT, 'media')
 
 # URL that handles the media served from MEDIA_ROOT.
 # Note that this should have a trailing slash if it has a path component
-# MEDIA_URL = 'http://static.myhost.ru' or MEDIA_URL = 'http://myhost.ru/static/'
-MEDIA_URL = 'http://localhost/media/opentodo/'
+# MEDIA_URL = 'http://media.myhost.ru' or MEDIA_URL = 'http://myhost.ru/media/'
+
+MEDIA_URL = '/media/'
+if not PRODUCTION:
+    MEDIA_URL = 'http://localhost/media/opentodo/'
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
 
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
