@@ -26,6 +26,7 @@
 <div id="logo-wrapper"><a href="{% url tasks_list %}" class="logo"><span style="padding-right: 2px;">open</span><b>todo</b></a></div>
 
 <div id="top-menu"><a href="{% url tasks_list %}"{% ifequal menu_active 'tasks'%}style="color:black"{% endifequal %}>Задачи</a>&nbsp;|&nbsp;<a href="{% url projects_list %}"{% ifequal menu_active 'projects'%}style="color:black"{% endifequal %}>Проекты</a>
+| <a href="{% url add_task %}">Добавить задачу</a>
 {% if user.is_superuser %}
 |&nbsp;<a href="/admin/" style="color:#aa0033" target="_blank">Администрирование</a>
 {% else %}
